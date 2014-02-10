@@ -1,3 +1,5 @@
+*This is just a proof of concept, not even near ready for anyone to use*
+
 ## Loremizer
 
 I keep needing to use logical lorem ipsum in some mocks, so I built this generator.
