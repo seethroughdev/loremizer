@@ -3,11 +3,14 @@
  * Module dependencies.
  */
 
-var express = require('express');
-var routes = require('./routes');
-var user = require('./routes/user');
-var http = require('http');
-var path = require('path');
+var express = require('express'),
+    routes = require('./routes'),
+    user = require('./routes/user'),
+    lorem = require('./routes/lorem'),
+    http = require('http'),
+    path = require('path'),
+    request = require('request'),
+    parser = require('htmlparser');
 
 var app = express();
 
@@ -31,6 +34,7 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/users', user.list);
+app.get('/lorem', lorem.index);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
